@@ -17,8 +17,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
             position: relative;
+            overflow: auto; /* Kaydırmayı etkinleştirmek için */
         }
 
         .background-container {
@@ -39,8 +39,8 @@
             height: 100%;
             object-fit: cover;
             transform-origin: center;
-            transition: transform 0.2s ease-out;
             transform: translate(-50%, -50%) scale(1.1); /* Initial position and zoom */
+            transition: transform 0.2s ease-out;
         }
 
         .background-container::before {
