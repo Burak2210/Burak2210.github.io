@@ -154,6 +154,7 @@
             from { transform: translateY(20px); }
             to { transform: translateY(0); }
         }
+        
         footer {
             position: absolute;
             bottom: 10px;
@@ -167,6 +168,46 @@
         footer p {
             margin: 0;
             padding: 5px;
+        }
+
+        /* Mobil uyumluluk için medya sorguları */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px; /* Kutular arasındaki boşluğu küçültüyoruz */
+            }
+
+            .content {
+                min-width: 90%; /* Genişliği yüzde 90 yaparak ekran boyutuna göre ayarlıyoruz */
+                padding: 20px; /* İçerik paddingini küçültüyoruz */
+            }
+
+            .projects {
+                min-width: 90%; /* Genişliği yüzde 90 yaparak ekran boyutuna göre ayarlıyoruz */
+            }
+
+            h1, h2 {
+                font-size: 2em; /* Başlık boyutunu küçültüyoruz */
+            }
+
+            p {
+                font-size: 1em; /* Metin boyutunu küçültüyoruz */
+            }
+
+            iframe {
+                width: 100%; /* iframe genişliğini ekran boyutuna göre ayarlıyoruz */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, h2 {
+                font-size: 1.5em; /* Başlık boyutunu daha da küçültüyoruz */
+            }
+
+            p {
+                font-size: 0.9em; /* Metin boyutunu daha da küçültüyoruz */
+            }
         }
     </style>
 </head>
@@ -216,7 +257,7 @@
         <div class="content projects">
             <h2>My Projects</h2>
             <p>I currently have one game. To play it free:</p>
-            <iframe src="https://itch.io/embed/2222853?bg_color=002650&amp;fg_color=ffffff&amp;link_color=fff420&amp;border_color=2f4661" width="552" height="167">
+            <iframe frameborder="0" src="https://itch.io/embed/2222853?border_width=0&amp;bg_color=081c3c&amp;fg_color=ffffff&amp;link_color=fff420&amp;border_color=2f4661" width="550" height="165">
                 <a href="https://burak2210.itch.io/dogecoin-trader">Dogecoin Trader by Burak2210</a>
             </iframe>
         </div>
