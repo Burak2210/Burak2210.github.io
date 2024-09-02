@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burak2210's Portfolio</title>
-    <!-- Google Fonts'tan Poppins fontunu dahil ediyoruz -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -29,7 +28,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: -1; /* İçerikten arka planda kalması için */
+            z-index: -1;
         }
 
         .background-video {
@@ -49,29 +48,29 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom right, rgba(0,36,71, 0.8), rgba(0,107,214, 0.8));
-            z-index: 1; /* Gradyanı video üstünde göstermek için */
+            z-index: 1; 
         }
 
         .container {
             display: flex;
             flex-direction: row;
-            gap: 30px; /* Kutular arasındaki boşluk */
+            gap: 30px; 
             justify-content: center;
             align-items: flex-start;
-            max-width: 1200px; /* Genişliği kısıtlayarak hizalamayı kolaylaştırır */
+            max-width: 1200px; 
             width: 90%;
             margin: 0 auto;
             position: relative;
-            z-index: 2; /* İçeriği üstte göstermek için */
+            z-index: 2; 
         }
 
         .content {
-            min-width: 500px; /* Genişliği artırdık */
-            min-height: 400px; /* Yüksekliği artırdık */
+            min-width: 500px; 
+            min-height: 400px; 
             background-color: rgba(0, 0, 0, 0.6);
-            padding: 40px; /* İçerik paddingini artırdık */
+            padding: 40px; 
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Kutuların gölgesini büyüttük */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
             animation: fadeIn 2s ease-out, slideDown 2s ease-out;
             display: flex;
             flex-direction: column;
@@ -80,16 +79,16 @@
         }
 
         .left-content {
-            min-height: 300px; /* Soldaki kutunun yüksekliğini azalttık */
+            min-height: 300px;
         }
 
         .projects {
-            min-width: 600px; /* Sağdaki kutunun genişliğini artırdık */
+            min-width: 600px; 
         }
 
         h1, h2 {
-            font-size: 2.5em; /* Başlık boyutunu artırdık */
-            margin-bottom: 10px; /* Başlık ve metin arasındaki boşluk */
+            font-size: 2.5em;
+            margin-bottom: 10px; 
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
 
@@ -100,14 +99,14 @@
         }
 
         .heading-container h1 {
-            margin-bottom: 5px; /* H1 ve H2 arasındaki boşluk */
+            margin-bottom: 5px; 
         }
 
         p {
             font-size: 1.2em;
-            line-height: 1.4; /* Satır aralarını azalttık */
+            line-height: 1.4; 
             text-align: center;
-            margin: 10px 0; /* Üst ve alt marginleri azalttık */
+            margin: 10px 0; 
         }
 
         iframe {
@@ -122,22 +121,22 @@
             margin-top: 20px;
             display: flex;
             flex-direction: column;
-            gap: 10px; /* Kartlar arasındaki boşluğu azalttık */
-            align-items: center; /* Kartları ortalamak için */
+            gap: 10px; 
+            align-items: center; 
         }
 
         .social-cards-row {
             display: flex;
-            gap: 10px; /* Yan yana kartlar arasındaki boşluğu azalttık */
-            justify-content: center; /* Kartları ortalamak için */
-            margin-bottom: 10px; /* Satırlar arasındaki boşluğu azalttık */
+            gap: 10px;
+            justify-content: center; 
+            margin-bottom: 10px; 
         }
 
         .social-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0; /* Kartlar arasındaki boşluğu ayarladık */
+            margin: 0; 
         }
 
         @keyframes fadeIn {
@@ -170,43 +169,42 @@
             padding: 5px;
         }
 
-        /* Mobil uyumluluk için medya sorguları */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
                 align-items: center;
-                gap: 20px; /* Kutular arasındaki boşluğu küçültüyoruz */
+                gap: 20px; 
             }
 
             .content {
-                min-width: 90%; /* Genişliği yüzde 90 yaparak ekran boyutuna göre ayarlıyoruz */
-                padding: 20px; /* İçerik paddingini küçültüyoruz */
+                min-width: 90%;
+                padding: 20px; 
             }
 
             .projects {
-                min-width: 90%; /* Genişliği yüzde 90 yaparak ekran boyutuna göre ayarlıyoruz */
+                min-width: 90%;
             }
 
             h1, h2 {
-                font-size: 2em; /* Başlık boyutunu küçültüyoruz */
+                font-size: 2em; 
             }
 
             p {
-                font-size: 1em; /* Metin boyutunu küçültüyoruz */
+                font-size: 1em; 
             }
 
             iframe {
-                width: 100%; /* iframe genişliğini ekran boyutuna göre ayarlıyoruz */
+                width: 100%; 
             }
         }
 
         @media (max-width: 480px) {
             h1, h2 {
-                font-size: 1.5em; /* Başlık boyutunu daha da küçültüyoruz */
+                font-size: 1.5em;
             }
 
             p {
-                font-size: 0.9em; /* Metin boyutunu daha da küçültüyoruz */
+                font-size: 0.9em; 
             }
         }
     </style>
