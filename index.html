@@ -33,11 +33,14 @@
 
         .background-video {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform-origin: center;
+            transition: transform 0.2s ease-out;
+            transform: translate(-50%, -50%) scale(1.1); /* Initial position and zoom */
         }
 
         .background-container::before {
@@ -274,12 +277,27 @@
             <h2>My Projects</h2>
             <p>I currently have one game. To play it free:</p>
             <iframe frameborder="0" src="https://itch.io/embed/2222853?border_width=0&amp;bg_color=0a2a8d&amp;fg_color=ffffff&amp;link_color=fff420&amp;border_color=2f4661" width="550" height="165">
-		    <a href="https://burak2210.itch.io/dogecoin-trader">Dogecoin Trader by Burak2210</a>
-	    </iframe>
+            <a href="https://burak2210.itch.io/dogecoin-trader">Dogecoin Trader by Burak2210</a>
+            </iframe>
         </div>
     </div>
     <footer>
         <p>2024 Burak2210 | Background by FeonY</p>
     </footer>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const video = document.querySelector('.background-video');
+            const { clientX: mouseX, clientY: mouseY } = e;
+            const { innerWidth: width, innerHeight: height } = window;
+
+            // Calculate the translation values with a reduced multiplier
+            const moveX = ((mouseX / width) - 0.5) * 10; // Adjusted multiplier for less movement
+            const moveY = ((mouseY / height) - 0.5) * 10; // Adjusted multiplier for less movement
+            
+            // Apply both zoom and translation
+            video.style.transform = `translate(-50%, -50%) translate(${moveX}px, ${moveY}px) scale(1.1)`; // Zoom level adjusted here
+        });
+    </script>
 </body>
 </html>
