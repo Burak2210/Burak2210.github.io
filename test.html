@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Web Sitesi</title>
+    <!-- Google Fonts'tan Poppins fontunu dahil ediyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* İçerikten arka planda kalması için */
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .background-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(0,36,71, 0.8), rgba(0,107,214, 0.8));
+            z-index: 1; /* Gradyanı video üstünde göstermek için */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 30px; /* Kutular arasındaki boşluk */
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1200px; /* Genişliği kısıtlayarak hizalamayı kolaylaştırır */
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2; /* İçeriği üstte göstermek için */
+        }
+
+        .content {
+            min-width: 500px; /* Genişliği artırdık */
+            min-height: 400px; /* Yüksekliği artırdık */
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px; /* İçerik paddingini artırdık */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Kutuların gölgesini büyüttük */
+            animation: fadeIn 2s ease-out, slideDown 2s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-content {
+            min-height: 300px; /* Soldaki kutunun yüksekliğini azalttık */
+        }
+
+        .projects {
+            min-width: 600px; /* Sağdaki kutunun genişliğini artırdık */
+        }
+
+        h1, h2 {
+            font-size: 2.5em; /* Başlık boyutunu artırdık */
+            margin-bottom: 10px; /* Başlık ve metin arasındaki boşluk */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .heading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .heading-container h1 {
+            margin-bottom: 5px; /* H1 ve H2 arasındaki boşluk */
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.4; /* Satır aralarını azalttık */
+            text-align: center;
+            margin: 10px 0; /* Üst ve alt marginleri azalttık */
+        }
+
+        iframe {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .social-cards {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Kartlar arasındaki boşluğu azalttık */
+            align-items: center; /* Kartları ortalamak için */
+        }
+
+        .social-cards-row {
+            display: flex;
+            gap: 10px; /* Yan yana kartlar arasındaki boşluğu azalttık */
+            justify-content: center; /* Kartları ortalamak için */
+            margin-bottom: 10px; /* Satırlar arasındaki boşluğu azalttık */
+        }
+
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0; /* Kartlar arasındaki boşluğu ayarladık */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <video class="background-video" autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="container">
+        <div class="content left-content">
+            <div class="heading-container">
+                <h1>Welcome, I'm Burak</h1>
+                <p>And I'm the Developer of Dogecoin Trader</p>
+            </div>
+            <p>Here are my socials:</p>
+            <div class="social-cards">
+                <div class="social-cards-row">
+                    <div class="social-card">
+                        <a href="https://github.com/Burak2210" target="_blank">
+                            <img src="https://bentos.jkominovic.dev/api/v1/bento-cards?url=https%3A%2F%2Fgithub.com%2FBurak2210&subtitle=Burak2210&size=square&rounded=10" alt="Burak2210">
+                        </a>
+                    </div>
+                    <div class="social-card">
+                        <a href="https://www.youtube.com/@Burak2210" target="_blank">
+                            <img src="https://bentos.jkominovic.dev/api/v1/bento-cards?url=https%3A%2F%2Fwww.youtube.com%2F%40Burak2210&subtitle=Burak2210&size=square&rounded=10" alt="Burak2210 YouTube">
+                        </a>
+                    </div>
+                </div>
+                <div class="social-cards-row">
+                    <div class="social-card">
+                        <a href="https://www.reddit.com/user/Burak2210/" target="_blank">
+                            <img src="https://bentos.jkominovic.dev/api/v1/bento-cards?url=https%3A%2F%2Fwww.reddit.com%2Fuser%2FBurak2210%2F&subtitle=Burak2210&size=square&rounded=10" alt="Burak2210 Reddit">
+                        </a>
+                    </div>
+                    <div class="social-card">
+                        <a href="https://discord.com/invite/pbPb8myG" target="_blank">
+                            <img src="https://bentos.jkominovic.dev/api/v1/bento-cards?url=https%3A%2F%2Fdiscord.com%2Finvite%2FpbPb8myG&subtitle=azimlihagrid&size=square&rounded=10" alt="azimlihagrid Discord">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content projects">
+            <h2>My Projects</h2>
+            <p>I currently have one game. To play it free:</p>
+            <iframe src="https://itch.io/embed/2222853?bg_color=002650&amp;fg_color=ffffff&amp;link_color=fff420&amp;border_color=2f4661" width="552" height="167">
+                <a href="https://burak2210.itch.io/dogecoin-trader">Dogecoin Trader by Burak2210</a>
+            </iframe>
+        </div>
+    </div>
+</body>
+</html>
